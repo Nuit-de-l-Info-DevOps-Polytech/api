@@ -16,7 +16,7 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "nationalitee", schema = "public")
+@Table(name = "nationalitee", schema = "public", uniqueConstraints = @UniqueConstraint(columnNames = {"nationalitee"}, name = "udx_nationalitee_nationalitee"))
 public class NationaliteEntity
 {
     @Id
