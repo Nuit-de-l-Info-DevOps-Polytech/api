@@ -21,7 +21,7 @@ public class UtilisateurController
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 
-    @GetMapping("getAllUtilisateur")
+    @GetMapping("")
     public ResponseEntity<List<UtilisateurEntity>> getAllUtilisateurs()
     {
         return ResponseEntity.ok(utilisateurRepository.findAll());

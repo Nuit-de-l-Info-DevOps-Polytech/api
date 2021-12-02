@@ -2,10 +2,13 @@ package com.example.demo.controller.NationaliteController;
 
 import com.example.demo.model.entity.NationaliteEntity;
 import com.example.demo.model.repository.NationaliteRepository;
+import io.swagger.models.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/nationalite")
@@ -14,7 +17,11 @@ public class NationaliteController
     @Autowired
     private NationaliteRepository nationaliteRepository;
 
-
+    @GetMapping("")
+    public ResponseEntity<List<NationaliteEntity>> getAllNationality()
+    {
+        return ResponseEntity.ok(nationaliteRepository.findAll());
+    }
 
     @GetMapping("getNationaliteeById/{id}")
     public ResponseEntity<NationaliteEntity> getNationaliteeById(@PathVariable Integer id)
