@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/utilisateur")
 public class UtilisateurController
@@ -19,6 +21,11 @@ public class UtilisateurController
     @Autowired
     private UtilisateurRepository utilisateurRepository;
 
+    @GetMapping("getAllUtilisateur")
+    public ResponseEntity<List<UtilisateurEntity>> getAllUtilisateurs()
+    {
+        return ResponseEntity.ok(utilisateurRepository.findAll());
+    }
 
     @GetMapping("getUtilisateurById/{id}")
     @ApiResponses(value = {
