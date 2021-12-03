@@ -70,6 +70,15 @@ public class SessionTokenController
         return ResponseEntity.noContent().build();
     }
 
+    @DeleteMapping("deleteSessionTokenByToken/{token}")
+    public ResponseEntity<Void> deleteSessionTokenById(@PathVariable String token)
+    {
+        if ( !sessionTokenRepository.existsBySessionToken(token))
+            ResponseEntity.notFound().build();
+        sessionTokenRepository.deleteBySessionToken(token);
+        return ResponseEntity.noContent().build();
+    }
+
     @PutMapping("updateSessionTokenById/{id}")
     public ResponseEntity<SessionTokenEntity> updateSessionTokenById(@PathVariable Integer id, @RequestBody SessionTokenEntity sessionTokenEntity)
     {

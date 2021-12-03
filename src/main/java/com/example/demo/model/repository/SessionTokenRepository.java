@@ -12,4 +12,8 @@ import java.util.Optional;
 public interface SessionTokenRepository extends JpaRepository<SessionTokenEntity, Integer>, JpaSpecificationExecutor<SessionTokenEntity>
 {
     List<SessionTokenEntity> findALlByUtilisateurEntity(UtilisateurEntity utilisateurEntity);
+    boolean existsBySessionToken(String sessionToken);
+
+    @Transactional
+    void deleteBySessionToken(String sessionToken);
 }
