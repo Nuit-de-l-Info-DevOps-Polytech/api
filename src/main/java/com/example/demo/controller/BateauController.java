@@ -37,7 +37,8 @@ public class BateauController
         if (bateauEntity.getType() == null )
             return ResponseEntity.ok(bateauRepository.save(bateauEntity));
 
-            return ResponseEntity.ok(bateauRepository.save(bateauEntity));
+
+        return ResponseEntity.ok(bateauRepository.save(bateauEntity));
 
     }
 

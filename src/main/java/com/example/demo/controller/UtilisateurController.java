@@ -45,6 +45,12 @@ public class UtilisateurController
         return ResponseEntity.of(utilisateurRepository.findByMail(mail));
     }
 
+    @PostMapping("getUtilisateurByMail")
+    public ResponseEntity<UtilisateurEntity> getUtilisateurByMailPost(@RequestBody String mail)
+    {
+        return ResponseEntity.of(utilisateurRepository.findByMail(mail));
+    }
+
     @PutMapping("updateUtilisateurById/{id}")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Ok"),
