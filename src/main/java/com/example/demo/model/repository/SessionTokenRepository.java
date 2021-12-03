@@ -11,5 +11,5 @@ import java.util.Optional;
 
 public interface SessionTokenRepository extends JpaRepository<SessionTokenEntity, Integer>, JpaSpecificationExecutor<SessionTokenEntity>
 {
-    List<SessionTokenEntity> findAllByPersonneEntity(PersonneEntity personne);
+    List<SessionTokenEntity> findALlByUtilisateurEntity(UtilisateurEntity utilisateurEntity);
 }

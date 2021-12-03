@@ -23,7 +23,7 @@ public class SessionTokenController
     private SessionTokenRepository sessionTokenRepository;
 
     @Autowired
-    private PersonneRepository personneRepository;
+    private UtilisateurRepository utilisateurRepository;
 
     @GetMapping("")
     public ResponseEntity<List<SessionTokenEntity>> getAllSessionToken()
@@ -32,12 +32,12 @@ public class SessionTokenController
     }
 
     @GetMapping("getAllById/{id}")
-    public ResponseEntity<List<SessionTokenEntity>> getAllById(@PathVariable Integer userId)
+    public ResponseEntity<List<SessionTokenEntity>> getAllById(@PathVariable Integer id)
     {
-        var p = personneRepository.findById(userId);
+        var p = utilisateurRepository.findById(id);
         if ( p.isEmpty() )
             return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(sessionTokenRepository.findAllByPersonneEntity(p.get()));
+        return ResponseEntity.ok(sessionTokenRepository.findALlByUtilisateurEntity(p.get()));
     }
 
     @GetMapping("getSessionTokenById/{id}")
@@ -55,7 +55,7 @@ public class SessionTokenController
     @PostMapping("createSessionTokenWithUserId/{idUser}")
     public ResponseEntity<SessionTokenEntity> createSessionTokenWithUserId(@PathVariable Integer idUser, @RequestBody String sessionToken)
     {
-        var p = personneRepository.findById(idUser);
+        var p = utilisateurRepository.findById(idUser);
         if ( p.isEmpty() )
             return ResponseEntity.notFound().build();
         else return ResponseEntity.ok(sessionTokenRepository.save(new SessionTokenEntity(0, p.get(), sessionToken)));

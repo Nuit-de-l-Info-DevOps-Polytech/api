@@ -22,8 +22,8 @@ public class SessionTokenEntity
 
     @JsonBackReference
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "personne_id", foreignKey = @ForeignKey(name = "fk_session_token_personne_id"))
-    private PersonneEntity personneEntity;
+    @JoinColumn(name = "utilisateur_id", foreignKey = @ForeignKey(name = "fk_session_token_utilisateur_id"))
+    private UtilisateurEntity utilisateurEntity;
 
     @Column(name = "session_token", columnDefinition = "text")
     private String sessionToken;
