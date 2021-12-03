@@ -5,17 +5,16 @@
 
 API destinée à l'authentification des utilisateurs
 
-## Docker
-### Install
+## Install
  Install from the command line:
 ```
 docker pull ghcr.io/nuit-de-l-info-devops-polytech/auth:master
 ```
 
-### Run
+## Run
 Running from the command line:
 ```
 docker run -p 8080:8080 ghcr.io/nuit-de-l-info-devops-polytech/auth:master
 ```
-### Use
+## Use
 Go to http://localhost:8080/swagger-ui/
