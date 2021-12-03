@@ -37,9 +37,14 @@ public class BateauController
         if (bateauEntity.getType() == null )
             return ResponseEntity.ok(bateauRepository.save(bateauEntity));
 
+        if (bateauEntity.getType() != null && typeBateauRepository.existsByType(bateauEntity.getType().getType()))
+        {
+            bateauEntity.setType(typeBateauRepository.findByType(bateauEntity.getType().getType()).get());
+            return ResponseEntity.ok(bateauRepository.save(bateauEntity));
+        }
 
+        bateauEntity.setType(typeBateauRepository.save(bateauEntity.getType()));
         return ResponseEntity.ok(bateauRepository.save(bateauEntity));
-
     }
 
     @DeleteMapping("deleteBateauById/{id}")
