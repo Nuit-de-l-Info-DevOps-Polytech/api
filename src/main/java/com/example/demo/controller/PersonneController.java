@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.entity.PersonneEntity;
+import com.example.demo.model.repository.NationaliteRepository;
 import com.example.demo.model.repository.PersonneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ public class PersonneController
 {
     @Autowired
     private PersonneRepository personneRepository;
+    @Autowired
+    private NationaliteRepository nationaliteRepository;
 
     @GetMapping("")
     public ResponseEntity<List<PersonneEntity>> getAllPersonne()
@@ -31,6 +34,16 @@ public class PersonneController
     @PostMapping("createPersonne")
     public ResponseEntity<PersonneEntity> createPersonne(@RequestBody PersonneEntity personneEntity)
     {
+        if (personneEntity.getNationaliteEntity() == null )
+            return ResponseEntity.ok(personneRepository.save(personneEntity));
+
+        if (personneEntity.getNationaliteEntity() != null && nationaliteRepository.existsByNationalitee(personneEntity.getNationaliteEntity().getNationalitee()))
+        {
+            personneEntity.setNationaliteEntity(nationaliteRepository.findByNationalitee(personneEntity.getNationaliteEntity().getNationalitee()).get());
+            return ResponseEntity.ok(personneRepository.save(personneEntity));
+        }
+
+        personneEntity.setNationaliteEntity(nationaliteRepository.save(personneEntity.getNationaliteEntity()));
         return ResponseEntity.ok(personneRepository.save(personneEntity));
     }
 
