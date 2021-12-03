@@ -52,7 +52,7 @@ public class SessionTokenController
         return ResponseEntity.ok(sessionTokenRepository.save(sessionToken));
     }
 
-    @PostMapping("createSessionTokenWithUserId/{id}")
+    @PostMapping("createSessionTokenWithUserId/{idUser}")
     public ResponseEntity<SessionTokenEntity> createSessionTokenWithUserId(@PathVariable Integer idUser, @RequestBody String sessionToken)
     {
         var p = personneRepository.findById(idUser);
