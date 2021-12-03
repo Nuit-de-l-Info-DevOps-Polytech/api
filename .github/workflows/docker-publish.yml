@@ -68,6 +68,7 @@ jobs:
           DEPLOY_HOST: ${{secrets.DEPLOY_HOST}}
           DEPLOY_COMMAND: ${{secrets.DEPLOY_COMMAND}}
         run: |
+         eval `ssh-agent -s`
          ssh-add - <<< "${DEPLOY_PRIVATE_KEY}"
          ssh ${DEPLOY_HOST} "${DEPLOY_COMMAND}"
           
