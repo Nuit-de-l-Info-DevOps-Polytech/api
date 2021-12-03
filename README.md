@@ -18,4 +18,7 @@ Running from the command line:
 docker run -p 8080:8080 ghcr.io/nuit-de-l-info-devops-polytech/auth:master
 ```
 ## Use
-Go to http://localhost:8080/swagger-ui/
+Go to http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+
+Choice the v2 version : 
+![Screenshot from 2021-12-03 02-58-12](https://user-images.githubusercontent.com/43273304/144531990-5f5e0795-5d02-4f51-ac28-fa20f8a8df99.png)
