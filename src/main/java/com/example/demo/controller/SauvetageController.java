@@ -1,12 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.entity.BateauEntity;
-import com.example.demo.model.entity.NationaliteEntity;
-import com.example.demo.model.entity.NaufrageeEntity;
 import com.example.demo.model.entity.SauvetageEntity;
-import com.example.demo.model.repository.BateauRepository;
-import com.example.demo.model.repository.NationaliteRepository;
-import com.example.demo.model.repository.NaufrageeRepository;
 import com.example.demo.model.repository.SauvetageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

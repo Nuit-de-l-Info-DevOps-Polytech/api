@@ -1,11 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.entity.EtatBateauEntity;
-import com.example.demo.model.entity.NationaliteEntity;
-import com.example.demo.model.entity.NaufrageeEntity;
 import com.example.demo.model.repository.EtatBateauRepository;
-import com.example.demo.model.repository.NationaliteRepository;
-import com.example.demo.model.repository.NaufrageeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

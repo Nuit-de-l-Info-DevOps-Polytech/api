@@ -1,6 +1,5 @@
 package com.example.demo.model.entity;
 
-import com.example.demo.model.entity.ids.ConcernerEntityId;
 import com.example.demo.model.entity.ids.SauverEntityId;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -30,8 +28,8 @@ public class SauverEntity
     @Id
     @JsonBackReference
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "naufragee_id", foreignKey = @ForeignKey(name = "fk_sauver_personne_id"))
-    private NaufrageeEntity personne;
+    @JoinColumn(name = "personne_id", foreignKey = @ForeignKey(name = "fk_sauver_personne_id"))
+    private PersonneEntity personne;
 
 
     @JsonBackReference

@@ -22,7 +22,7 @@ public class SauvetageEntity
     private Integer id;
 
     @Column(name = "date_sauvetage", columnDefinition = "date" )
-    private Date dateNauffrage;
+    private Date dateSauvetage;
 
     @Column(name = "titre", columnDefinition = "varchar(255)")
     private String titre;

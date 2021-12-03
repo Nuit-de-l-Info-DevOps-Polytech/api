@@ -1,8 +1,7 @@
 package com.example.demo.model.entity.ids;
 
 import com.example.demo.model.entity.BateauEntity;
-import com.example.demo.model.entity.NaufrageeEntity;
-import com.example.demo.model.entity.SauvetageEntity;
+import com.example.demo.model.entity.PersonneEntity;
 import lombok.*;
 
 import java.io.Serializable;
@@ -14,7 +13,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 public class ContenirEntityId implements Serializable
 {
-    private NaufrageeEntity personne;
+    private PersonneEntity personne;
     private BateauEntity bateau;
 
 }

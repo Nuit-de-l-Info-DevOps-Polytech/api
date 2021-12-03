@@ -9,7 +9,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 
 @Getter
@@ -17,8 +17,8 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "naufragee", schema = "public")
-public class NaufrageeEntity
+@Table(name = "personne", schema = "public")
+public class PersonneEntity
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,12 +30,15 @@ public class NaufrageeEntity
     @Column(name = "prenom", columnDefinition = "varchar(255)")
     private String prenom;
 
+    @Column(name = "surnom", columnDefinition = "varchar(255)")
+    private String surnom;
+
     @Column(name = "lieu_naissance", columnDefinition = "varchar(255)")
     private String lieuNaissance;
 
     @JsonBackReference
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "nationalitee_id", foreignKey = @ForeignKey(name = "fk_naufragee_nationalitee_id"))
+    @JoinColumn(name = "nationalitee_id", foreignKey = @ForeignKey(name = "fk_personne_nationalitee_id"))
     private NationaliteEntity nationaliteEntity;
 
     @Column(name = "profession", columnDefinition = "varchar(255)")
@@ -55,6 +58,26 @@ public class NaufrageeEntity
 
     @Column(name = "photo", columnDefinition = "text" )
     private String photo;
+
+    @Lob
+    @Column(name = "description" )
+    private String description;
+
+    @Lob
+    @Column(name = "etat_civil" )
+    private String etatCivil;
+
+    @Lob
+    @Column(name = "donnees_genealo" )
+    private String donneesGenealo;
+
+    @Lob
+    @Column(name = "vie_pro" )
+    private String viePro;
+
+    @Lob
+    @Column(name = "recompenses" )
+    private String recompenses;
 
     @Column(name = "source", columnDefinition = "text" )
     private String source;

@@ -1,7 +1,6 @@
 package com.example.demo.model.entity.ids;
 
-import com.example.demo.model.entity.BateauEntity;
-import com.example.demo.model.entity.NaufrageeEntity;
+import com.example.demo.model.entity.PersonneEntity;
 import com.example.demo.model.entity.SauvetageEntity;
 import lombok.*;
 
@@ -15,7 +14,7 @@ import java.io.Serializable;
 public class SauverEntityId implements Serializable {
     private SauvetageEntity sauvetage;
 
-    private NaufrageeEntity personne;
+    private PersonneEntity personne;
 
 
 }
