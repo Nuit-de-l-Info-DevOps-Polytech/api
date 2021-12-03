@@ -2,10 +2,7 @@ package com.example.demo.model.entity.ids;
 
 import com.example.demo.model.entity.BateauEntity;
 import com.example.demo.model.entity.SauvetageEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -13,6 +10,7 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class ConcernerEntityId implements Serializable {
     private SauvetageEntity sauvetage;
 
