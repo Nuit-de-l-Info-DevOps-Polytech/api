@@ -16,14 +16,14 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "etat_bateau", schema = "public")
-public class EtatBateauEntity
+@Table(name = "etat_personne", schema = "public")
+public class EtatPersonneEntity
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "etat_bateau", columnDefinition = "varchar(255)")
-    private String etatBateau;
+    @Column(name = "etat_personne", columnDefinition = "varchar(255)")
+    private String etatPersonne;
 
 }
