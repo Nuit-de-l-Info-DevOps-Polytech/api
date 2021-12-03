@@ -44,4 +44,8 @@ public class SauvetageEntity
     @Column(name = "sources_sauvetage")
     private String sourcesSauvetage;
 
+    @Lob
+    @Column(name = "image_sauvetage")
+    private String imageSauvetage;
+
 }
