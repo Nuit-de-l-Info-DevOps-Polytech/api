@@ -1,5 +1,6 @@
 package com.example.demo.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,8 +24,10 @@ public class BateauEntity
     @Column(name = "nom", columnDefinition = "varchar(255)")
     private String nom;
 
-    @Column(name = "type", columnDefinition = "varchar(255)")
-    private String type;
+    @JsonBackReference
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "type_bateau_id", foreignKey = @ForeignKey(name = "fk_bateau_type_bateau_id"))
+    private TypeBateauEntity type;
 
     @Column(name = "date_nauffrage", columnDefinition = "date" )
     private Date dateNauffrage;

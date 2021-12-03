@@ -42,11 +42,10 @@ public class UtilisateurEntity
     @Column(name = "hash_mdp", columnDefinition = "text")
     private String password;
 
-    @Column(name = "session_token", columnDefinition = "text")
-    private String sessionToken;
-
-    @Column(name = "refresh_token", columnDefinition = "text")
-    private String refreshToken;
+    @JsonBackReference
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "session_token_id", foreignKey = @ForeignKey(name = "fk_utilisateur_session_token"))
+    private SessionTokenEntity sessionToken;
 
     @Column(name = "is_admin", columnDefinition = "boolean default false")
     private Boolean isAdmin;
