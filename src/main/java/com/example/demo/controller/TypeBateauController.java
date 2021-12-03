@@ -5,6 +5,7 @@ import com.example.demo.model.entity.TypeBateauEntity;
 import com.example.demo.model.repository.NationaliteRepository;
 import com.example.demo.model.repository.TypeBateauRepository;
 import io.swagger.models.Response;
+import org.apache.tomcat.util.buf.UriUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

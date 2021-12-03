@@ -36,10 +36,7 @@ public class BateauController
     {
         if (bateauEntity.getType() == null )
             return ResponseEntity.ok(bateauRepository.save(bateauEntity));
-       /* if (bateauEntity.getType() != null && typeBateauRepository.existsByType(bateauEntity.getType().getType()))
-        {
-            typeBateauRepository.findByType(bateauEntity.getType().getType())
-        }*/
+
             return ResponseEntity.ok(bateauRepository.save(bateauEntity));
 
     }
