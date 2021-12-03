@@ -4,7 +4,7 @@
 ![GitHub Actions](https://github.com/Nuit-de-l-Info-DevOps-Polytech/auth/workflows/Docker/badge.svg)
 ![GitHub Actions](https://github.com/Nuit-de-l-Info-DevOps-Polytech/auth/workflows/Java%20CI%20with%20Maven/badge.svg)
 
-API destinée à l'authentification des utilisateurs
+API destinée à l'authentification et à la gestion des utilisateurs
 
 ## Install
  Install from the command line:
