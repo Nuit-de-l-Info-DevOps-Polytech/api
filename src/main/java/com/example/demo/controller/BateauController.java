@@ -1,4 +1,4 @@
-package com.example.demo.controller.NationaliteController;
+package com.example.demo.controller;
 
 import com.example.demo.model.entity.BateauEntity;
 import com.example.demo.model.entity.NationaliteEntity;
@@ -26,13 +26,13 @@ public class BateauController
         return ResponseEntity.ok(bateauRepository.findAll());
     }
 
-    @GetMapping("getNaufrageeById/{id}")
+    @GetMapping("getBateauById/{id}")
     public ResponseEntity<BateauEntity> getBateauById(@PathVariable Integer id)
     {
         return ResponseEntity.of(bateauRepository.findById(id));
     }
 
-    @PostMapping("createNaufragee")
+    @PostMapping("createBateau")
     public ResponseEntity<BateauEntity> createBateau(@RequestBody BateauEntity bateauEntity)
     {
         return ResponseEntity.ok(bateauRepository.save(bateauEntity));
@@ -48,7 +48,7 @@ public class BateauController
     }
 
     @PutMapping("updateBateauById/{id}")
-    public ResponseEntity<BateauEntity> updateNaufrageeById(@PathVariable Integer id, @RequestBody BateauEntity bateauEntity)
+    public ResponseEntity<BateauEntity> updateBateauById(@PathVariable Integer id, @RequestBody BateauEntity bateauEntity)
     {
         if ( !bateauRepository.existsById(id))
             return ResponseEntity.notFound().build();

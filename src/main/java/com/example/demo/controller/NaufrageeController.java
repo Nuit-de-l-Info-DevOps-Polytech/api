@@ -1,4 +1,4 @@
-package com.example.demo.controller.NationaliteController;
+package com.example.demo.controller;
 
 import com.example.demo.model.entity.NationaliteEntity;
 import com.example.demo.model.entity.NaufrageeEntity;

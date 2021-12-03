@@ -40,7 +40,7 @@ public class UtilisateurEntity
     private String lieuNaissance;
 
     @Column(name = "hash_mdp", columnDefinition = "text")
-    private String hashMdp;
+    private String password;
 
     @Column(name = "session_token", columnDefinition = "text")
     private String sessionToken;
