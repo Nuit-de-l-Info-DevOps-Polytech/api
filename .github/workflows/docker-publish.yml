@@ -61,3 +61,13 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          
+      - name: Rollup production
+        env:
+          DEPLOY_PRIVATE_KEY: ${{secrets.DEPLOY_PRIVATE_KEY}}
+          DEPLOY_HOST: ${{secrets.DEPLOY_HOST}}
+          DEPLOY_COMMAND: ${{secrets.DEPLOY_COMMAND}}
+        run: |
+         ssh-add - <<< "${DEPLOY_PRIVATE_KEY}"
+         ssh ${DEPLOY_HOST} "${DEPLOY_COMMAND}"
+          
