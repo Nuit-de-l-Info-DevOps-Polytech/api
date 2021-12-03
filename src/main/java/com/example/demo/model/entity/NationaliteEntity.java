@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 @Table(name = "nationalitee", schema = "public", uniqueConstraints = @UniqueConstraint(columnNames = {"nationalitee"}, name = "udx_nationalitee_nationalitee"))
 public class NationaliteEntity
 {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

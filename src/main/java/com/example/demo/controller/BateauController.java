@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.entity.BateauEntity;
 import com.example.demo.model.repository.BateauRepository;
+import com.example.demo.model.repository.TypeBateauRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,8 @@ public class BateauController
 {
     @Autowired
     private BateauRepository bateauRepository;
+    @Autowired
+    private TypeBateauRepository typeBateauRepository;
 
     @GetMapping("")
     public ResponseEntity<List<BateauEntity>> getAllBateau()
@@ -31,7 +34,14 @@ public class BateauController
     @PostMapping("createBateau")
     public ResponseEntity<BateauEntity> createBateau(@RequestBody BateauEntity bateauEntity)
     {
-        return ResponseEntity.ok(bateauRepository.save(bateauEntity));
+        if (bateauEntity.getType() == null )
+            return ResponseEntity.ok(bateauRepository.save(bateauEntity));
+       /* if (bateauEntity.getType() != null && typeBateauRepository.existsByType(bateauEntity.getType().getType()))
+        {
+            typeBateauRepository.findByType(bateauEntity.getType().getType())
+        }*/
+            return ResponseEntity.ok(bateauRepository.save(bateauEntity));
+
     }
 
     @DeleteMapping("deleteBateauById/{id}")
